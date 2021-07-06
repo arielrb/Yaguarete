@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Usuarios.apps.UsuariosConfig',
     'Tienda.apps.TiendaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'Yaguarete.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./Yaguarete/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
