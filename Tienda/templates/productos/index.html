@@ -1,0 +1,13 @@
+{% extends "productos/layout.html" %}
+{% block body %}
+    <h1>Productos</h1>
+    <ul>
+        {% for producto in lista_productos %}
+            <li>
+               
+                <p>nombre {{producto}}</p>
+                <p>descripcion {{producto.descripcion}}</p>
+                <p>añadido el {{producto.fecha}}</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
