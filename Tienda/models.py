@@ -25,11 +25,7 @@ class Carrito(models.Model):
 
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	productos = models.ManyToManyField(Producto)
-	
-	#total = productos.objects.sele
-	
-	#def suma():
-	#	total = productos.precio.all()
+	#total = productos.objects.annotate(sum('precio'))
 
 	def __str__(self):
-		return f'El usuario {self.user} tiene en su carro {self.productos}'
+		return f'El usuario {self.user} tiene en su carro {self.productos.objects.all}'
