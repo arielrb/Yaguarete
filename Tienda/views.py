@@ -8,3 +8,7 @@ def index(request):
     return render(request,"Front/index.html", {
         "lista_productos": Producto.objects.all().order_by('-fecha')[:10],
     })
+def carrito(request):
+    return render(request,"Front/carrito.html",{
+        "carrito": Carrito.objects.all()
+    })

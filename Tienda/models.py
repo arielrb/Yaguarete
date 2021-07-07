@@ -20,12 +20,27 @@ class Producto(models.Model):
 	def __str__(self):
 		return f"{self.title} de valor {self.precio}$"
 
-
 class Carrito(models.Model):
 
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	productos = models.ManyToManyField(Producto)
-	#total = productos.objects.annotate(sum('precio'))
+	activo = models.BooleanField(default = True, null = False)
+
+	def total(self):
+		variable = 0
+		for objeto in self.productos.all():
+			variable += objeto.precio
+		return variable
 
 	def __str__(self):
-		return f'El usuario {self.user} tiene en su carro {self.productos.objects.all}'
+		
+		return f'El usuario {self.user} tiene en su carro un total de {self.total()}$'
+
+
+
+
+
+
+
+
+

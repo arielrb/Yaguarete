@@ -1,0 +1,11 @@
+{% extends "productos/layout.html" %}
+{% block body %}
+    <h1>Productos</h1>
+    <ul>
+        {% for carro in carrito %}
+            <li>               
+                <p>{{carro}}</p>
+
+        {% endfor %}
+    </ul>
+{% endblock %}
