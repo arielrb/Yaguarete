@@ -32,6 +32,9 @@ class Carrito(models.Model):
 			variable += objeto.precio
 		return variable
 
+	def agregar_carrito(self):
+		pass
+
 	def __str__(self):
 		
 		return f'El usuario {self.user} tiene en su carro un total de {self.total()}$'
